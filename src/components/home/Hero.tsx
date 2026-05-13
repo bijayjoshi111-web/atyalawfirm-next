@@ -56,7 +56,7 @@ export default function Hero() {
 
           <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-10">
             A premier full-service law firm committed to providing exceptional legal counsel.
-            With over 5 years of experience, we fight for what matters most.
+            With over 6 years of experience, we fight for what matters most.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">

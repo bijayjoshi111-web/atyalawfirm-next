@@ -2,10 +2,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 40, suffix: "+", label: "Years of Excellence" },
-  { value: 500, suffix: "+", label: "Cases Won" },
-  { value: 50, suffix: "+", label: "Expert Attorneys" },
-  { value: 98, suffix: "%", label: "Client Satisfaction" },
+  { value: 6, suffix: "+", label: "Years of Excellence" },
+  { value: 150, suffix: "+", label: "Cases Won" },
+  { value: 5, suffix: "+", label: "Expert Attorneys" },
+  { value: 95, suffix: "%", label: "Client Satisfaction" },
 ];
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {

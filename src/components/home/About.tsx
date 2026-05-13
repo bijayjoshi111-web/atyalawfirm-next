@@ -22,7 +22,7 @@ export default function About() {
             </div>
             {/* Gold accent box */}
             <div className="absolute -bottom-6 right-0 md:-right-6 bg-[#c9a84c] p-8 text-black">
-              <p className="font-display text-4xl font-bold leading-none">40</p>
+              <p className="font-display text-4xl font-bold leading-none">6</p>
               <p className="text-xs uppercase tracking-widest mt-1 font-bold">Years of<br/>Excellence</p>
             </div>
           </div>
@@ -38,10 +38,10 @@ export default function About() {
             </h2>
             <div className="w-12 h-[2px] bg-[#c9a84c] mb-6" />
             <p className="text-[#666] leading-relaxed mb-4">
-              Founded in 1984, Atya Law Firm has grown to become one of the most trusted full-service law firms in the country. We combine deep legal expertise with a genuine commitment to our clients' success.
+              Founded in 2020, Atya Law Firm has grown to become one of the most trusted full-service law firms in the country. We combine deep legal expertise with a genuine commitment to our clients' success.
             </p>
             <p className="text-[#666] leading-relaxed mb-8">
-              Our team of 50+ attorneys brings decades of experience across commercial, civil, and criminal law. We serve individuals, businesses, and institutions with the same unwavering dedication.
+              Our team of 5+ attorneys brings decades of experience across commercial, civil, and criminal law. We serve individuals, businesses, and institutions with the same unwavering dedication.
             </p>
 
             <div className="grid grid-cols-3 gap-4 mb-8">

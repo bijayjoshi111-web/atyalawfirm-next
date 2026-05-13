@@ -33,7 +33,7 @@ export default function Hero() {
           {/* Eyebrow */}
           <div className="flex items-center gap-3 mb-8">
             <Scale size={16} className="text-[#c9a84c]" />
-            <span className="text-[#c9a84c] text-xs tracking-[0.4em] uppercase">Est. 1984 · New York</span>
+            <span className="text-[#c9a84c] text-xs tracking-[0.4em] uppercase">Est. 2020 · Kathmandu, Nepal</span>
           </div>
 
           {/* Headline */}
@@ -56,7 +56,7 @@ export default function Hero() {
 
           <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-10">
             A premier full-service law firm committed to providing exceptional legal counsel.
-            With over 40 years of experience, we fight for what matters most.
+            With over 5 years of experience, we fight for what matters most.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">

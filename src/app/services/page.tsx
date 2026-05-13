@@ -6,6 +6,12 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Practice Areas | Atya Law Firm",
   description: "Atya Law Firm offers expert legal services across Corporate Law, Litigation, Intellectual Property, Real Estate, Tax Law, Family Law, Employment Law, and more.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Practice Areas | Atya Law Firm",
+    description: "Atya Law Firm offers expert legal services across Corporate Law, Litigation, Intellectual Property, Real Estate, Tax Law, Family Law, Employment Law, and more.",
+    url: "/services",
+  },
 };
 import { Scale, Gavel, Lightbulb, Home, BarChart2, Users, ArrowRight, Building2, FileText, Globe } from "lucide-react";
 

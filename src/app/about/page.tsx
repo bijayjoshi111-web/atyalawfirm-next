@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import CTA from "@/components/home/CTA";
+import AnthemLyrics from "@/components/AnthemLyrics";
 import { Award, Users, Globe, Scale } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us | Atya Law Firm",
   description: "Learn about Atya Law Firm — our history, mission, values, and the commitment to justice and excellence that has guided us for over 40 years.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Us | Atya Law Firm",
+    description: "Learn about Atya Law Firm — our history, mission, values, and the commitment to justice and excellence that has guided us for over 40 years.",
+    url: "/about",
+  },
 };
 
 const timeline = [
@@ -134,6 +141,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <AnthemLyrics />
       <CTA />
     </>
   );

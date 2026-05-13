@@ -13,7 +13,7 @@ export default function Footer() {
             <span className="text-[10px] tracking-[0.3em] text-[#c9a84c] uppercase font-light">Law Firm</span>
           </div>
           <p className="text-white/60 text-sm leading-relaxed mb-5">
-            A premier full-service law firm committed to justice, integrity, and excellence since 1984.
+            A premier full-service law firm committed to justice, integrity, and excellence since 2020.
           </p>
           <div className="flex gap-3">
             <a href="https://www.facebook.com/atyalaw" target="_blank" rel="noopener noreferrer" className="w-9 h-9 border border-white/20 flex items-center justify-center hover:bg-[#c9a84c] hover:border-[#c9a84c] hover:text-black transition-all">

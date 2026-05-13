@@ -6,6 +6,12 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact Us | Atya Law Firm",
   description: "Get in touch with Atya Law Firm. Schedule a consultation, visit our office, or reach us by phone or email. We're here to help.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Us | Atya Law Firm",
+    description: "Get in touch with Atya Law Firm. Schedule a consultation, visit our office, or reach us by phone or email. We're here to help.",
+    url: "/contact",
+  },
 };
 
 export default function ContactPage() {

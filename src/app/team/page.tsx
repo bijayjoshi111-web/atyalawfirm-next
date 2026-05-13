@@ -7,11 +7,17 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Our Team | Atya Law Firm",
   description: "Meet the experienced attorneys at Atya Law Firm — dedicated legal professionals committed to delivering exceptional results for every client.",
+  alternates: { canonical: "/team" },
+  openGraph: {
+    title: "Our Team | Atya Law Firm",
+    description: "Meet the experienced attorneys at Atya Law Firm — dedicated legal professionals committed to delivering exceptional results for every client.",
+    url: "/team",
+  },
 };
 
 const attorneys = [
   { name: "Anupam Bhattarai", title: "Founding Partner", specialty: "", initials: "AB", photo: "/team/anupam.jpeg" },
-  { name: "Ashruti", title: "Partner", specialty: "", initials: "AS", photo: "/team/ashruti.jpeg" },
+  { name: "Ashruti Nepal", title: "Partner", specialty: "", initials: "AS", photo: "/team/ashruti.jpeg" },
   { name: "Sarvendra Purush Dhakal", title: "Partner", specialty: "", initials: "SD", photo: "/team/sarvendra.jpeg" },
   { name: "Manish Dahal", title: "Managing Partner", specialty: "", initials: "MD", photo: "/team/manish.jpeg" },
 ];

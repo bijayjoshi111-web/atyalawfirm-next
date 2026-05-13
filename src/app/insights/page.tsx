@@ -8,6 +8,12 @@ import posts from "@/data/posts.json";
 export const metadata: Metadata = {
   title: "Insights | Atya Law Firm",
   description: "Stay informed with legal insights, analysis, and updates from the attorneys at Atya Law Firm covering corporate law, tax, IP, litigation, and more.",
+  alternates: { canonical: "/insights" },
+  openGraph: {
+    title: "Insights | Atya Law Firm",
+    description: "Stay informed with legal insights, analysis, and updates from the attorneys at Atya Law Firm covering corporate law, tax, IP, litigation, and more.",
+    url: "/insights",
+  },
 };
 
 export default function InsightsPage() {

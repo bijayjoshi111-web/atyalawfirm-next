@@ -6,22 +6,22 @@ import { Award, Users, Globe, Scale } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us | Atya Law Firm",
-  description: "Learn about Atya Law Firm — our history, mission, values, and the commitment to justice and excellence that has guided us for over 40 years.",
+  description: "Learn about Atya Law Firm — our history, mission, values, and the commitment to justice and excellence that has guided us for over 6 years.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Us | Atya Law Firm",
-    description: "Learn about Atya Law Firm — our history, mission, values, and the commitment to justice and excellence that has guided us for over 40 years.",
+    description: "Learn about Atya Law Firm — our history, mission, values, and the commitment to justice and excellence that has guided us for over 6 years.",
     url: "/about",
   },
 };
 
 const timeline = [
-  { year: "1984", title: "Founded", desc: "Atya Law Firm established by founding partners with a vision for client-first legal practice." },
-  { year: "1992", title: "Expansion", desc: "Opened second office and added corporate law and tax practices to our portfolio." },
-  { year: "2001", title: "Recognition", desc: "Named among the Top 50 Law Firms in the region by Legal Excellence Awards." },
-  { year: "2010", title: "Growth", desc: "Grew to 30+ attorneys; launched our Intellectual Property and Technology practice." },
-  { year: "2018", title: "Innovation", desc: "Established a dedicated pro bono program, providing free legal aid to underserved communities." },
-  { year: "2024", title: "Today", desc: "50+ attorneys, 4 offices, Chambers & Partners ranked, serving clients across the globe." },
+  { year: "2020", title: "Founded", desc: "Atya Law Firm established by founding partners with a vision for client-first legal practice." },
+  { year: "2021", title: "Expansion", desc: "Opened second office and added corporate law and tax practices to our portfolio." },
+  { year: "2022", title: "Recognition", desc: "Named among the Top 50 Law Firms in the region by Legal Excellence Awards." },
+  { year: "2023", title: "Growth", desc: "Grew to 30+ attorneys; launched our Intellectual Property and Technology practice." },
+  { year: "2024", title: "Innovation", desc: "Established a dedicated pro bono program, providing free legal aid to underserved communities." },
+  { year: "2025", title: "Today", desc: "50+ attorneys, 4 offices, Chambers & Partners ranked, serving clients across the globe." },
 ];
 
 const values = [
@@ -68,10 +68,10 @@ export default function AboutPage() {
           <AnimateOnScroll direction="right" delay={200}>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: "40+", label: "Years of Practice" },
-                { value: "500+", label: "Cases Won" },
-                { value: "50+", label: "Expert Attorneys" },
-                { value: "98%", label: "Client Satisfaction" },
+                { value: "6+", label: "Years of Practice" },
+                { value: "150+", label: "Cases Won" },
+                { value: "5+", label: "Expert Attorneys" },
+                { value: "95%", label: "Client Satisfaction" },
               ].map((stat) => (
                 <div key={stat.label} className="bg-[#f9f7f4] border border-[#e0e0e0] p-8 text-center hover:border-[#c9a84c] transition-colors">
                   <div className="font-display text-4xl text-[#c9a84c] font-bold">{stat.value}</div>

@@ -43,10 +43,10 @@ export default function TeamPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {attorneys.map((attorney, i) => (
-              <AnimateOnScroll key={attorney.name} delay={i * 60} direction="up">
-                <div className="group border border-[#e0e0e0] hover:border-[#c9a84c] hover:shadow-lg transition-all overflow-hidden">
+              <AnimateOnScroll key={attorney.name} delay={i * 60} direction="up" className="h-full">
+                <div className="group border border-[#e0e0e0] hover:border-[#c9a84c] hover:shadow-lg transition-all overflow-hidden flex flex-col h-full">
                   {/* Photo */}
-                  <div className="bg-[#0a0a0a] h-52 flex items-center justify-center relative overflow-hidden">
+                  <div className="bg-[#0a0a0a] h-52 flex items-center justify-center relative overflow-hidden shrink-0">
                     {attorney.photo ? (
                       <Image
                         src={attorney.photo}

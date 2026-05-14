@@ -55,7 +55,7 @@ export default function AboutPage() {
               </h2>
               <div className="w-12 h-[2px] bg-[#c9a84c] mb-6" />
               <p className="text-[#666] leading-relaxed mb-4">
-                At Atya Law Firm, we don't just provide legal advice — we become trusted partners in our clients' success. Founded in 1984, our firm has built a reputation for delivering outstanding results through a combination of legal expertise, strategic thinking, and genuine dedication.
+                At Atya Law Firm, we don't just provide legal advice — we become trusted partners in our clients' success. Founded in 2020, our firm has built a reputation for delivering outstanding results through a combination of legal expertise, strategic thinking, and genuine dedication.
               </p>
               <p className="text-[#666] leading-relaxed mb-4">
                 We are a full-service firm, meaning we handle every dimension of our clients' legal needs — from complex corporate transactions and high-stakes litigation to personal matters like estate planning and family law.

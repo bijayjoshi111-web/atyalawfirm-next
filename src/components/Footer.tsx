@@ -98,7 +98,7 @@ export default function Footer() {
             <li className="flex gap-3 items-center">
               <Mail size={15} className="text-[#c9a84c] shrink-0" />
               <a href="mailto:info@atyalaw.com" className="text-white/60 text-sm hover:text-[#c9a84c] transition-colors">
-                info@atyalaw.com
+                info@atyalaw.com.np
               </a>
             </li>
           </ul>

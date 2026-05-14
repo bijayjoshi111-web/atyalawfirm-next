@@ -16,7 +16,7 @@ export default function About() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-[#c9a84c] rotate-45" />
               </div>
               <div className="text-center z-10">
-                <div className="text-[#c9a84c] font-display text-6xl font-bold opacity-30">AL</div>
+                <div className="text-[#c9a84c] font-display text-6xl font-bold opacity-30">ALF</div>
                 <p className="text-white/30 text-xs tracking-widest uppercase mt-2">Atya Law Firm</p>
               </div>
             </div>

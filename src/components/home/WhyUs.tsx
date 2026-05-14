@@ -15,7 +15,7 @@ const features = [
   {
     icon: Shield,
     title: "Experienced Team",
-    desc: "50+ attorneys with elite law school credentials and deep practical expertise.",
+    desc: "5+ attorneys with elite law school credentials and deep practical expertise.",
   },
   {
     icon: Lock,

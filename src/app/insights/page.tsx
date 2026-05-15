@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import CTA from "@/components/home/CTA";
-import { Calendar, ArrowRight, PenLine } from "lucide-react";
+import { Calendar, ArrowRight, PenLine, Settings } from "lucide-react";
 import posts from "@/data/posts.json";
 
 export const metadata: Metadata = {
@@ -31,12 +31,21 @@ export default function InsightsPage() {
               Legal analysis, industry updates, and expert perspectives from the Atya Law Firm team.
             </p>
           </div>
-          <Link
-            href="/admin/write"
-            className="inline-flex items-center gap-2 px-5 py-3 border border-[#c9a84c]/50 text-[#c9a84c] text-xs uppercase tracking-widest hover:bg-[#c9a84c] hover:text-black transition-colors self-start md:self-auto whitespace-nowrap"
-          >
-            <PenLine size={13} /> Write Article
-          </Link>
+          <div className="flex items-center gap-3 self-start md:self-auto">
+            <Link
+              href="/submit"
+              className="inline-flex items-center gap-2 px-5 py-3 border border-[#c9a84c]/50 text-[#c9a84c] text-xs uppercase tracking-widest hover:bg-[#c9a84c] hover:text-black transition-colors whitespace-nowrap"
+            >
+              <PenLine size={13} /> Submit Article
+            </Link>
+            <Link
+              href="/admin/write"
+              className="inline-flex items-center gap-2 px-4 py-3 border border-white/20 text-white/40 text-xs uppercase tracking-widest hover:border-white/40 hover:text-white/60 transition-colors whitespace-nowrap"
+              title="Admin"
+            >
+              <Settings size={13} />
+            </Link>
+          </div>
         </div>
       </section>
 

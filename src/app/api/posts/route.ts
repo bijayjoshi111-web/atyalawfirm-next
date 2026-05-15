@@ -11,6 +11,16 @@ function slugify(text: string) {
     .replace(/-+/g, "-");
 }
 
+export async function GET() {
+  try {
+    const filePath = join(process.cwd(), "src", "data", "posts.json");
+    const posts = JSON.parse(readFileSync(filePath, "utf-8"));
+    return NextResponse.json(posts);
+  } catch {
+    return NextResponse.json({ error: "Failed to load posts." }, { status: 500 });
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -42,6 +52,26 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: true, slug });
   } catch {
     return NextResponse.json({ error: "Failed to save post." }, { status: 500 });
+  }
+}
+
+export async function DELETE(req: NextRequest) {
+  try {
+    const { slug } = await req.json();
+    if (!slug) return NextResponse.json({ error: "Slug required." }, { status: 400 });
+
+    const filePath = join(process.cwd(), "src", "data", "posts.json");
+    const existing: Post[] = JSON.parse(readFileSync(filePath, "utf-8"));
+    const updated = existing.filter((p) => p.slug !== slug);
+
+    if (updated.length === existing.length) {
+      return NextResponse.json({ error: "Post not found." }, { status: 404 });
+    }
+
+    writeFileSync(filePath, JSON.stringify(updated, null, 2));
+    return NextResponse.json({ success: true });
+  } catch {
+    return NextResponse.json({ error: "Failed to delete post." }, { status: 500 });
   }
 }
 

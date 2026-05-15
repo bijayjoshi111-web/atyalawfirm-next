@@ -104,8 +104,8 @@ export default function Footer() {
           </ul>
           <div className="mt-5 p-3 border border-white/10">
             <p className="text-xs text-white/40 uppercase tracking-widest mb-1">Office Hours</p>
-            <p className="text-sm text-white/60">Mon–Fri: 9:00 AM – 6:00 PM</p>
-            <p className="text-sm text-white/60">Sat: 10:00 AM – 2:00 PM</p>
+            <p className="text-sm text-white/60">Mon–Fri: 8:00 AM – 6:00 PM</p>
+            <p className="text-sm text-white/60">Sat-Sun: 10:00 AM – 4:00 PM</p>
           </div>
         </div>
       </div>

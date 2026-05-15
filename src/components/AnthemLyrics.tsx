@@ -1,70 +1,52 @@
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 
-const sections = [
-  {
-    label: "Intro",
-    lines: ["Yeah… Atya Law…", "From the streets to the courts, we rise…", "Kathmandu vibes…"],
-  },
-  {
-    label: "Verse 1",
-    lines: [
-      "Step in the court, yeah we ready to fight,",
-      "Black coats on, yeah we move with the right.",
-      "Truth in the file, facts on sight,",
-      "Every case we touch, we bring it to light.",
-      "",
-      "No fear, no doubt, we stand so tall,",
-      "When justice calls, we answer the call.",
-      "From the ground up, yeah we built this name,",
-      "Atya Law Firm, remember the name.",
-    ],
-  },
-  {
-    label: "Hook",
-    lines: [
-      "Atya Law, we don't back down,",
-      "Turn every loss to a victory crown.",
-      "Truth in our voice, power in pen,",
-      "Fight for the people again and again.",
-    ],
-  },
-  {
-    label: "Verse 2",
-    lines: [
-      "Contracts signed, yeah we seal it tight,",
-      "Rights protected, we defend what's right.",
-      "From the alleys to the high court gate,",
-      "We carry the weight, we challenge fate.",
-      "",
-      "Every client got a story to tell,",
-      "We break those chains, we break that shell.",
-      "Law is our weapon, sharp and clean,",
-      "Living the code, know what I mean?",
-    ],
-  },
-  {
-    label: "Bridge",
-    lines: [
-      "Kathmandu city, yeah we represent,",
-      "Anamnagar roots, every move is intent.",
-      "From struggle to strength, from doubt to proof,",
-      "We stand for justice—that's living truth.",
-    ],
-  },
-  {
-    label: "Final Verse",
-    lines: [
-      "Legacy built on honor and grind,",
-      "Sharp like the law, yeah we one of a kind.",
-      "Future is ours, no limits, no flaw,",
-      "Stand up—stand proud—ATYA LAW!",
-    ],
-  },
-  {
-    label: "Outro",
-    lines: ["Yeah… justice never sleeps…", "Atya Law Firm… we keep it real."],
-  },
+const allLines = [
+  "Yeah… Atya Law…",
+  "From the streets to the courts, we rise…",
+  "Kathmandu vibes…",
+  "",
+  "Step in the court, yeah we ready to fight,",
+  "Black coats on, yeah we move with the right.",
+  "Truth in the file, facts on sight,",
+  "Every case we touch, we bring it to light.",
+  "",
+  "No fear, no doubt, we stand so tall,",
+  "When justice calls, we answer the call.",
+  "From the ground up, yeah we built this name,",
+  "Atya Law Firm, remember the name.",
+  "",
+  "Atya Law, we don't back down,",
+  "Turn every loss to a victory crown.",
+  "Truth in our voice, power in pen,",
+  "Fight for the people again and again.",
+  "",
+  "Contracts signed, yeah we seal it tight,",
+  "Rights protected, we defend what's right.",
+  "From the alleys to the high court gate,",
+  "We carry the weight, we challenge fate.",
+  "",
+  "Every client got a story to tell,",
+  "We break those chains, we break that shell.",
+  "Law is our weapon, sharp and clean,",
+  "Living the code, know what I mean?",
+  "",
+  "Kathmandu city, yeah we represent,",
+  "Anamnagar roots, every move is intent.",
+  "From struggle to strength, from doubt to proof,",
+  "We stand for justice—that's living truth.",
+  "",
+  "Legacy built on honor and grind,",
+  "Sharp like the law, yeah we one of a kind.",
+  "Future is ours, no limits, no flaw,",
+  "Stand up—stand proud—ATYA LAW!",
+  "",
+  "Yeah… justice never sleeps…",
+  "Atya Law Firm… we keep it real.",
 ];
+
+const mid = Math.ceil(allLines.length / 2);
+const leftColumn = allLines.slice(0, mid);
+const rightColumn = allLines.slice(mid);
 
 export default function AnthemLyrics() {
   return (
@@ -80,27 +62,34 @@ export default function AnthemLyrics() {
           </div>
         </AnimateOnScroll>
 
-        <div className="grid md:grid-cols-2 gap-x-16 gap-y-10 max-w-5xl mx-auto">
-          {sections.map((section, i) => (
-            <AnimateOnScroll key={section.label} delay={i * 80} direction="up">
-              <div className="border border-white/10 p-6 hover:border-[#c9a84c]/40 transition-colors">
-                <p className="text-[#c9a84c] text-xs uppercase tracking-[0.3em] mb-4">
-                  {section.label}
-                </p>
-                <div className="space-y-1">
-                  {section.lines.map((line, j) =>
-                    line === "" ? (
-                      <div key={j} className="h-3" />
-                    ) : (
-                      <p key={j} className="text-white/70 text-sm leading-relaxed font-light">
-                        {line}
-                      </p>
-                    )
-                  )}
-                </div>
-              </div>
-            </AnimateOnScroll>
-          ))}
+        <div className="grid md:grid-cols-2 gap-x-16 max-w-5xl mx-auto">
+          <AnimateOnScroll direction="up">
+            <div className="space-y-1">
+              {leftColumn.map((line, i) =>
+                line === "" ? (
+                  <div key={i} className="h-3" />
+                ) : (
+                  <p key={i} className="text-white/70 text-sm leading-relaxed font-light">
+                    {line}
+                  </p>
+                )
+              )}
+            </div>
+          </AnimateOnScroll>
+
+          <AnimateOnScroll direction="up" delay={80}>
+            <div className="space-y-1">
+              {rightColumn.map((line, i) =>
+                line === "" ? (
+                  <div key={i} className="h-3" />
+                ) : (
+                  <p key={i} className="text-white/70 text-sm leading-relaxed font-light">
+                    {line}
+                  </p>
+                )
+              )}
+            </div>
+          </AnimateOnScroll>
         </div>
       </div>
     </section>

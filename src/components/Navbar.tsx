@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Phone, Mail, ArrowUpRight } from "lucide-react";
 
@@ -15,9 +16,19 @@ const navLinks = [
 
 function Wordmark() {
   return (
-    <Link href="/" className="flex flex-col leading-none text-[#f2e7dc]" aria-label="Atya Law Firm — home">
-      <span className="font-display text-[1.75rem] tracking-[0.04em]">Atya</span>
-      <span className="text-[0.625rem] tracking-[0.35em] uppercase text-[#a68365] mt-1">Law Firm</span>
+    <Link href="/" className="flex items-center gap-3 text-[#f2e7dc]" aria-label="Atya Law Firm — home">
+      <Image
+        src="/logo.jpeg"
+        alt=""
+        width={56}
+        height={56}
+        priority
+        className="h-12 w-12 md:h-14 md:w-14 rounded-full object-cover bg-white ring-1 ring-[#f2e7dc]/25"
+      />
+      <span className="flex flex-col leading-none">
+        <span className="font-display text-[1.75rem] tracking-[0.04em]">Atya</span>
+        <span className="text-[0.625rem] tracking-[0.35em] uppercase text-[#a68365] mt-1">Law Firm</span>
+      </span>
     </Link>
   );
 }

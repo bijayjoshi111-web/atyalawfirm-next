@@ -37,41 +37,41 @@ const areas = [
 
 export default function PracticeAreas() {
   return (
-    <section className="py-24 bg-[#f9f7f4]">
+    <section className="py-24 bg-[#f2e7dc]">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <AnimateOnScroll direction="up">
           <div className="text-center mb-16">
-            <p className="text-[#c9a84c] text-xs uppercase tracking-[0.3em] mb-3">What We Do</p>
-            <h2 className="font-display text-4xl md:text-5xl text-[#0a0a0a]">
+            <p className="text-[#a68365] text-xs uppercase tracking-[0.3em] mb-3">What We Do</p>
+            <h2 className="font-display text-5xl md:text-7xl leading-[0.95] text-[#472e18]">
               Practice Areas
             </h2>
-            <div className="w-12 h-[2px] bg-[#c9a84c] mx-auto mt-5" />
+            <div className="w-12 h-[2px] bg-[#a68365] mx-auto mt-5" />
           </div>
         </AnimateOnScroll>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0 border border-[#e0e0e0]">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0 border border-[#e6dace]">
           {areas.map((area, i) => (
-            <AnimateOnScroll key={area.title} delay={i * 80} direction="up" className="border-b border-[#e0e0e0] border-r-0 md:border-r md:even:border-r-0 lg:even:border-r lg:[&:nth-child(3n)]:border-r-0">
+            <AnimateOnScroll key={area.title} delay={i * 80} direction="up" className="border-b border-[#e6dace] border-r-0 md:border-r md:even:border-r-0 lg:even:border-r lg:[&:nth-child(3n)]:border-r-0">
               <Link
                 href="/services"
-                className="group block p-8 hover:bg-[#0a0a0a] transition-colors duration-300 relative overflow-hidden h-full"
+                className="group block p-8 hover:bg-[#472e18] transition-colors duration-300 relative overflow-hidden h-full"
               >
                 {/* Gold top border on hover */}
-                <span className="absolute top-0 left-0 w-0 h-[3px] bg-[#c9a84c] group-hover:w-full transition-all duration-300" />
+                <span className="absolute top-0 left-0 w-0 h-[3px] bg-[#a68365] group-hover:w-full transition-all duration-300" />
 
                 <area.icon
                   size={28}
-                  className="text-[#c9a84c] mb-5 group-hover:scale-110 transition-transform"
+                  className="text-[#a68365] mb-5 group-hover:scale-110 transition-transform"
                 />
-                <h3 className="font-display text-xl text-[#0a0a0a] group-hover:text-white mb-3 transition-colors">
+                <h3 className="font-display text-xl text-[#1f1f1f] group-hover:text-white mb-3 transition-colors">
                   {area.title}
                 </h3>
                 <p className="text-[#666] group-hover:text-white/60 text-sm leading-relaxed mb-5 transition-colors">
                   {area.desc}
                 </p>
-                <span className="flex items-center gap-2 text-[#c9a84c] text-xs uppercase tracking-widest font-bold">
+                <span className="flex items-center gap-2 text-[#a68365] text-xs uppercase tracking-widest font-bold">
                   Learn More
                   <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                 </span>
@@ -84,7 +84,7 @@ export default function PracticeAreas() {
           <div className="text-center mt-10">
             <Link
               href="/services"
-              className="inline-flex items-center gap-3 border-2 border-[#0a0a0a] text-[#0a0a0a] px-8 py-3 text-sm uppercase tracking-widest font-bold hover:bg-[#0a0a0a] hover:text-white transition-all"
+              className="inline-flex items-center gap-3 border-2 border-[#1f1f1f] text-[#1f1f1f] px-8 py-3 text-xs uppercase tracking-[0.2em] font-semibold rounded-full hover:bg-[#472e18] hover:text-white transition-all"
             >
               View All Services <ArrowRight size={14} />
             </Link>

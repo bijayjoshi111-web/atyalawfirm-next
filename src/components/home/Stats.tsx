@@ -48,18 +48,18 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
 export default function Stats() {
   return (
-    <section className="bg-[#0a0a0a] border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4">
+    <section id="stats" className="bg-[#f2e7dc] scroll-mt-24">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 border-b border-[#472e18]/15">
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="py-12 px-8 text-center border-r border-white/10 even:border-r-0 md:even:border-r md:last:border-r-0 group hover:bg-white/5 transition-colors"
+              className="py-12 md:py-16 px-4 md:px-8 border-[#472e18]/15 border-r even:border-r-0 md:even:border-r md:last:border-r-0 [&:nth-child(-n+2)]:border-b md:[&:nth-child(-n+2)]:border-b-0"
             >
-              <div className="font-display text-4xl md:text-5xl text-[#c9a84c] font-bold mb-2">
+              <div className="font-display text-5xl md:text-7xl text-[#472e18] leading-none mb-3">
                 <Counter value={stat.value} suffix={stat.suffix} />
               </div>
-              <div className="text-white/50 text-xs uppercase tracking-[0.2em]">{stat.label}</div>
+              <div className="eyebrow text-[#a68365] !text-[0.6875rem]">{stat.label}</div>
             </div>
           ))}
         </div>

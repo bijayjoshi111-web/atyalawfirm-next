@@ -76,12 +76,11 @@ export default function ServicesPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="bg-[#0a0a0a] py-24 relative overflow-hidden">
-        <div className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-transparent via-[#c9a84c] to-transparent" />
+      <section className="bg-[#472e18] pt-24 pb-16 md:pt-32 md:pb-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
-          <p className="text-[#c9a84c] text-xs uppercase tracking-[0.3em] mb-4">What We Do</p>
-          <h1 className="font-display text-5xl md:text-6xl text-white">Our Services</h1>
-          <div className="w-12 h-[2px] bg-[#c9a84c] mt-6" />
+          <p className="eyebrow text-[#a68365] mb-6">What We Do</p>
+          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl text-[#f2e7dc] leading-[0.9]">Our Services</h1>
+          <div className="h-px bg-[#f2e7dc]/20 mt-12" />
           <p className="text-white/50 mt-6 max-w-xl leading-relaxed">
             Full-service legal counsel across all major practice areas. Whatever your legal challenge, we have the expertise to help.
           </p>
@@ -93,29 +92,29 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 space-y-16">
           {services.map((service, i) => (
             <AnimateOnScroll key={service.title} delay={50} direction="up">
-              <div className={`grid md:grid-cols-2 gap-12 items-start pb-16 border-b border-[#e0e0e0] last:border-0 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
+              <div className={`grid md:grid-cols-2 gap-12 items-start pb-16 border-b border-[#e6dace] last:border-0 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
                 <div>
                   <div className="flex items-center gap-4 mb-5">
-                    <div className="w-14 h-14 bg-[#0a0a0a] flex items-center justify-center">
-                      <service.icon size={22} className="text-[#c9a84c]" />
+                    <div className="w-14 h-14 bg-[#472e18] flex items-center justify-center">
+                      <service.icon size={22} className="text-[#a68365]" />
                     </div>
-                    <h2 className="font-display text-3xl text-[#0a0a0a]">{service.title}</h2>
+                    <h2 className="font-display text-3xl text-[#1f1f1f]">{service.title}</h2>
                   </div>
-                  <div className="w-10 h-[2px] bg-[#c9a84c] mb-5" />
+                  <div className="w-10 h-[2px] bg-[#a68365] mb-5" />
                   <p className="text-[#666] leading-relaxed mb-6">{service.desc}</p>
                   <Link
                     href="/contact"
-                    className="group inline-flex items-center gap-2 text-sm uppercase tracking-widest font-bold text-[#0a0a0a] border-b border-[#c9a84c] pb-1 hover:text-[#c9a84c] transition-colors"
+                    className="group inline-flex items-center gap-2 text-sm uppercase tracking-widest font-bold text-[#1f1f1f] border-b border-[#a68365] pb-1 hover:text-[#a68365] transition-colors"
                   >
                     Consult on this matter <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
-                <div className="bg-[#f9f7f4] border border-[#e0e0e0] p-8">
-                  <h3 className="text-xs uppercase tracking-[0.2em] text-[#c9a84c] font-bold mb-5">Practice Areas</h3>
+                <div className="bg-[#f2e7dc] border border-[#e6dace] p-8">
+                  <h3 className="text-xs uppercase tracking-[0.2em] text-[#a68365] font-bold mb-5">Practice Areas</h3>
                   <ul className="space-y-3">
                     {service.areas.map((area) => (
                       <li key={area} className="flex items-center gap-3 text-sm text-[#444]">
-                        <span className="w-4 h-[1px] bg-[#c9a84c] inline-block shrink-0" />
+                        <span className="w-4 h-[1px] bg-[#a68365] inline-block shrink-0" />
                         {area}
                       </li>
                     ))}

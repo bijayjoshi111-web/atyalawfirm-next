@@ -20,13 +20,12 @@ export default function InsightsPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="bg-[#0a0a0a] py-24 relative overflow-hidden">
-        <div className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-transparent via-[#c9a84c] to-transparent" />
+      <section className="bg-[#472e18] pt-24 pb-16 md:pt-32 md:pb-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <p className="text-[#c9a84c] text-xs uppercase tracking-[0.3em] mb-4">Knowledge Center</p>
-            <h1 className="font-display text-5xl md:text-6xl text-white">Insights & News</h1>
-            <div className="w-12 h-[2px] bg-[#c9a84c] mt-6" />
+            <p className="eyebrow text-[#a68365] mb-6">Knowledge Center</p>
+            <h1 className="font-display text-6xl md:text-8xl lg:text-9xl text-[#f2e7dc] leading-[0.9]">Insights & News</h1>
+            <div className="h-px bg-[#f2e7dc]/20 mt-12" />
             <p className="text-white/50 mt-6 max-w-xl leading-relaxed">
               Legal analysis, industry updates, and expert perspectives from the Atya Law Firm team.
             </p>
@@ -34,7 +33,7 @@ export default function InsightsPage() {
           <div className="flex items-center gap-3 self-start md:self-auto">
             <Link
               href="/submit"
-              className="inline-flex items-center gap-2 px-5 py-3 border border-[#c9a84c]/50 text-[#c9a84c] text-xs uppercase tracking-widest hover:bg-[#c9a84c] hover:text-black transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 px-5 py-3 border border-[#a68365]/50 text-[#a68365] text-xs uppercase tracking-widest hover:bg-[#a68365] hover:text-white transition-colors whitespace-nowrap"
             >
               <PenLine size={13} /> Submit Article
             </Link>
@@ -56,28 +55,28 @@ export default function InsightsPage() {
           <AnimateOnScroll direction="up">
             <Link
               href={`/insights/${posts[0].slug}`}
-              className="grid md:grid-cols-2 gap-0 border border-[#e0e0e0] mb-12 group hover:border-[#c9a84c] transition-colors overflow-hidden"
+              className="grid md:grid-cols-2 gap-0 border border-[#e6dace] mb-12 group hover:border-[#a68365] transition-colors overflow-hidden"
             >
-              <div className="bg-[#0a0a0a] min-h-[300px] flex items-center justify-center relative overflow-hidden">
+              <div className="bg-[#472e18] min-h-[300px] flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-[#c9a84c] rotate-45" />
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-[#a68365] rotate-45" />
                 </div>
-                <span className="font-display text-[#c9a84c]/20 text-8xl font-bold relative z-10">01</span>
+                <span className="font-display text-[#a68365]/20 text-8xl relative z-10">01</span>
               </div>
               <div className="p-10 flex flex-col justify-center">
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="text-[#c9a84c] text-[10px] uppercase tracking-[0.2em] font-bold bg-[#c9a84c]/10 px-3 py-1">
+                  <span className="text-[#a68365] text-[10px] uppercase tracking-[0.2em] font-bold bg-[#a68365]/10 px-3 py-1">
                     {posts[0].category}
                   </span>
                   <span className="flex items-center gap-1 text-[#999] text-xs">
                     <Calendar size={11} /> {posts[0].date}
                   </span>
                 </div>
-                <h2 className="font-display text-3xl text-[#0a0a0a] mb-4 group-hover:text-[#c9a84c] transition-colors">
+                <h2 className="font-display text-3xl text-[#1f1f1f] mb-4 group-hover:text-[#a68365] transition-colors">
                   {posts[0].title}
                 </h2>
                 <p className="text-[#666] leading-relaxed mb-6">{posts[0].excerpt}</p>
-                <span className="group/link inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-[#0a0a0a] group-hover:text-[#c9a84c] transition-colors">
+                <span className="group/link inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-[#1f1f1f] group-hover:text-[#a68365] transition-colors">
                   Read Full Article <ArrowRight size={11} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </div>
@@ -89,20 +88,20 @@ export default function InsightsPage() {
             {posts.slice(1).map((post, i) => (
               <AnimateOnScroll key={post.slug} delay={i * 80} direction="up">
                 <Link href={`/insights/${post.slug}`}>
-                  <article className="group border border-[#e0e0e0] hover:border-[#c9a84c] transition-colors overflow-hidden h-full">
-                    <div className="h-1 bg-[#f0ede8] group-hover:bg-[#c9a84c] transition-colors" />
+                  <article className="group border border-[#e6dace] hover:border-[#a68365] transition-colors overflow-hidden h-full">
+                    <div className="h-1 bg-[#e8d9c9] group-hover:bg-[#a68365] transition-colors" />
                     <div className="p-7">
                       <div className="flex items-center justify-between mb-4">
-                        <span className="text-[#c9a84c] text-[10px] uppercase tracking-[0.2em] font-bold">{post.category}</span>
+                        <span className="text-[#a68365] text-[10px] uppercase tracking-[0.2em] font-bold">{post.category}</span>
                         <span className="flex items-center gap-1 text-[#999] text-xs">
                           <Calendar size={11} /> {post.date}
                         </span>
                       </div>
-                      <h3 className="font-display text-xl text-[#0a0a0a] mb-3 leading-snug group-hover:text-[#c9a84c] transition-colors">
+                      <h3 className="font-display text-xl text-[#1f1f1f] mb-3 leading-snug group-hover:text-[#a68365] transition-colors">
                         {post.title}
                       </h3>
                       <p className="text-[#666] text-sm leading-relaxed mb-5">{post.excerpt}</p>
-                      <span className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-[#0a0a0a] group-hover:text-[#c9a84c] transition-colors">
+                      <span className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-[#1f1f1f] group-hover:text-[#a68365] transition-colors">
                         Read More <ArrowRight size={11} />
                       </span>
                     </div>

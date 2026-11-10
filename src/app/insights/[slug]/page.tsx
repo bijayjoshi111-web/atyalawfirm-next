@@ -42,17 +42,16 @@ export default async function PostPage({ params }: Props) {
   return (
     <>
       {/* Header */}
-      <section className="bg-[#0a0a0a] py-24 relative overflow-hidden">
-        <div className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-transparent via-[#c9a84c] to-transparent" />
+      <section className="bg-[#472e18] pt-24 pb-16 md:pt-32 md:pb-20 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4">
           <Link
             href="/insights"
-            className="inline-flex items-center gap-2 text-[#c9a84c] text-xs uppercase tracking-widest mb-8 hover:opacity-70 transition-opacity"
+            className="inline-flex items-center gap-2 text-[#a68365] text-xs uppercase tracking-widest mb-8 hover:opacity-70 transition-opacity"
           >
             <ArrowLeft size={12} /> Back to Insights
           </Link>
           <div className="flex items-center gap-4 mb-6">
-            <span className="text-[#c9a84c] text-[10px] uppercase tracking-[0.25em] font-bold bg-[#c9a84c]/10 px-3 py-1">
+            <span className="text-[#a68365] text-[10px] uppercase tracking-[0.25em] font-bold bg-[#a68365]/10 px-3 py-1">
               {post.category}
             </span>
             <span className="flex items-center gap-1 text-white/40 text-xs">
@@ -63,7 +62,7 @@ export default async function PostPage({ params }: Props) {
             {post.title}
           </h1>
           <p className="text-white/50 text-lg leading-relaxed max-w-2xl">{post.excerpt}</p>
-          <div className="w-12 h-[2px] bg-[#c9a84c] mt-8" />
+          <div className="w-12 h-[2px] bg-[#a68365] mt-8" />
         </div>
       </section>
 
@@ -82,25 +81,25 @@ export default async function PostPage({ params }: Props) {
 
             {/* Sidebar */}
             <aside className="space-y-8">
-              <div className="border border-[#e0e0e0] p-6">
-                <p className="text-[10px] uppercase tracking-widest text-[#c9a84c] font-bold mb-3">Category</p>
-                <div className="inline-flex items-center gap-2 text-sm text-[#0a0a0a]">
-                  <Tag size={13} className="text-[#c9a84c]" />
+              <div className="border border-[#e6dace] p-6">
+                <p className="text-[10px] uppercase tracking-widest text-[#a68365] font-bold mb-3">Category</p>
+                <div className="inline-flex items-center gap-2 text-sm text-[#1f1f1f]">
+                  <Tag size={13} className="text-[#a68365]" />
                   {post.category}
                 </div>
               </div>
-              <div className="border border-[#e0e0e0] p-6">
-                <p className="text-[10px] uppercase tracking-widest text-[#c9a84c] font-bold mb-3">Published</p>
+              <div className="border border-[#e6dace] p-6">
+                <p className="text-[10px] uppercase tracking-widest text-[#a68365] font-bold mb-3">Published</p>
                 <p className="text-sm text-[#444]">{post.date}</p>
               </div>
-              <div className="border border-[#c9a84c]/30 bg-[#c9a84c]/5 p-6">
-                <p className="text-[10px] uppercase tracking-widest text-[#c9a84c] font-bold mb-3">Need Legal Advice?</p>
+              <div className="border border-[#a68365]/30 bg-[#a68365]/5 p-6">
+                <p className="text-[10px] uppercase tracking-widest text-[#a68365] font-bold mb-3">Need Legal Advice?</p>
                 <p className="text-xs text-[#666] leading-relaxed mb-4">
                   Our attorneys are available to discuss how these issues may affect you.
                 </p>
                 <Link
                   href="/contact"
-                  className="block text-center py-2 bg-[#c9a84c] text-black text-xs uppercase tracking-widest font-bold hover:bg-[#a8892e] transition-colors"
+                  className="block text-center py-2 bg-[#a68365] text-white text-xs uppercase tracking-[0.2em] font-semibold rounded-full hover:bg-[#8c6c50] transition-colors"
                 >
                   Contact Us
                 </Link>
@@ -112,18 +111,18 @@ export default async function PostPage({ params }: Props) {
 
       {/* Prev / Next */}
       {(prev || next) && (
-        <section className="border-t border-[#e0e0e0] bg-white pb-16">
+        <section className="border-t border-[#e6dace] bg-white pb-16">
           <div className="max-w-4xl mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-6">
               {prev && (
                 <Link
                   href={`/insights/${prev.slug}`}
-                  className="group border border-[#e0e0e0] hover:border-[#c9a84c] p-6 transition-colors"
+                  className="group border border-[#e6dace] hover:border-[#a68365] p-6 transition-colors"
                 >
                   <p className="text-[10px] uppercase tracking-widest text-[#999] mb-2 flex items-center gap-1">
                     <ArrowLeft size={10} /> Previous
                   </p>
-                  <p className="font-display text-[#0a0a0a] group-hover:text-[#c9a84c] transition-colors leading-snug">
+                  <p className="font-display text-[#1f1f1f] group-hover:text-[#a68365] transition-colors leading-snug">
                     {prev.title}
                   </p>
                 </Link>
@@ -131,12 +130,12 @@ export default async function PostPage({ params }: Props) {
               {next && (
                 <Link
                   href={`/insights/${next.slug}`}
-                  className="group border border-[#e0e0e0] hover:border-[#c9a84c] p-6 transition-colors md:text-right md:ml-auto w-full"
+                  className="group border border-[#e6dace] hover:border-[#a68365] p-6 transition-colors md:text-right md:ml-auto w-full"
                 >
                   <p className="text-[10px] uppercase tracking-widest text-[#999] mb-2 flex items-center gap-1 md:justify-end">
                     Next <ArrowRight size={10} />
                   </p>
-                  <p className="font-display text-[#0a0a0a] group-hover:text-[#c9a84c] transition-colors leading-snug">
+                  <p className="font-display text-[#1f1f1f] group-hover:text-[#a68365] transition-colors leading-snug">
                     {next.title}
                   </p>
                 </Link>

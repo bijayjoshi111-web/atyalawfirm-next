@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Lato } from "next/font/google";
+import { Open_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-playfair",
+const erode = localFont({
+  src: [
+    { path: "./fonts/Erode-Variable.woff2", weight: "300 700", style: "normal" },
+    { path: "./fonts/Erode-VariableItalic.woff2", weight: "300 700", style: "italic" },
+  ],
+  variable: "--font-erode",
   display: "swap",
 });
 
-const lato = Lato({
+const openSans = Open_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "700"],
-  variable: "--font-lato",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-open-sans",
   display: "swap",
 });
 
@@ -86,7 +88,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${lato.variable}`}>
+    <html lang="en" className={`${erode.variable} ${openSans.variable}`}>
       <head>
         <script
           type="application/ld+json"

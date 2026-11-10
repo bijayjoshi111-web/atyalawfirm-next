@@ -1,75 +1,60 @@
-"use client";
 import Link from "next/link";
-import { ArrowRight, Scale } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { ArrowRight, ArrowDown } from "lucide-react";
+
+const words = ["Justice.", "Integrity.", "Excellence."];
 
 export default function Hero() {
-  const lineRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const t = setTimeout(() => {
-      if (lineRef.current) lineRef.current.style.width = "100%";
-    }, 500);
-    return () => clearTimeout(t);
-  }, []);
-
   return (
-    <section className="relative min-h-[92vh] flex items-center bg-[#0a0a0a] overflow-hidden">
-      {/* Gold geometric accent */}
-      <div className="absolute top-0 right-0 w-1/2 h-full opacity-5">
-        <div className="absolute top-10 right-10 w-96 h-96 border border-[#c9a84c] rotate-45" />
-        <div className="absolute top-20 right-20 w-72 h-72 border border-[#c9a84c] rotate-45" />
-        <div className="absolute top-32 right-32 w-52 h-52 border border-[#c9a84c] rotate-45" />
+    <section className="relative min-h-[min(calc(100svh-5rem),60rem)] md:min-h-[min(calc(100svh-6rem),60rem)] flex flex-col bg-[#472e18] text-[#f2e7dc] overflow-hidden">
+      {/* Soft light + vertical rule lines */}
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 60% at 80% 20%, rgba(166,131,101,0.28), transparent 60%), radial-gradient(ellipse 60% 50% at 0% 100%, rgba(0,0,0,0.35), transparent 70%)",
+        }}
+      />
+      <div aria-hidden className="absolute inset-0 pointer-events-none hidden md:grid grid-cols-4 px-8">
+        {[0, 1, 2, 3].map((i) => (
+          <div key={i} className="border-l border-[#f2e7dc]/[0.07] last:border-r" />
+        ))}
       </div>
-      <div className="absolute bottom-0 left-0 w-1/3 h-2/3 opacity-5">
-        <div className="absolute bottom-10 left-10 w-80 h-80 border border-[#c9a84c] rotate-12" />
-      </div>
 
-      {/* Gold vertical line */}
-      <div className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-transparent via-[#c9a84c] to-transparent" />
+      <div className="relative flex-1 flex flex-col justify-end px-6 md:px-8 pt-24 pb-14 md:pb-20 max-w-[1440px] w-full mx-auto">
+        <p className="eyebrow text-[#a68365] mb-8 rise" style={{ animationDelay: "100ms" }}>
+          Advocates &amp; Legal Consultants · Kathmandu, Nepal
+        </p>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-24 w-full">
-        <div className="max-w-3xl">
-          {/* Eyebrow */}
-          <div className="flex items-center gap-3 mb-8">
-            <Scale size={16} className="text-[#c9a84c]" />
-            <span className="text-[#c9a84c] text-xs tracking-[0.4em] uppercase">Est. 2020 · Kathmandu, Nepal</span>
-          </div>
+        <h1 className="font-display text-[3.5rem] sm:text-7xl md:text-8xl lg:text-[8.5rem] leading-[0.9] tracking-[-0.02em]">
+          {words.map((w, i) => (
+            <span key={w} className="block overflow-hidden pb-[0.06em]">
+              <span
+                className={`block rise ${i === 1 ? "italic text-[#a68365]" : ""}`}
+                style={{ animationDelay: `${250 + i * 150}ms` }}
+              >
+                {w}
+              </span>
+            </span>
+          ))}
+        </h1>
 
-          {/* Headline */}
-          <h1 className="font-display text-5xl md:text-7xl text-white leading-tight mb-4">
-            Justice.
-            <br />
-            <span className="text-[#c9a84c] italic">Integrity.</span>
-            <br />
-            Excellence.
-          </h1>
-
-          {/* Animated underline */}
-          <div className="h-[2px] bg-white/10 my-8 relative overflow-hidden">
-            <span
-              ref={lineRef}
-              className="absolute top-0 left-0 h-full bg-[#c9a84c] transition-all duration-1000"
-              style={{ width: "0%" }}
-            />
-          </div>
-
-          <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-10">
-            A premier full-service law firm committed to providing exceptional legal counsel.
-            With over 6 years of experience, we fight for what matters most.
+        <div className="mt-12 md:mt-16 pt-8 border-t border-[#f2e7dc]/20 grid md:grid-cols-[1fr_auto] gap-8 items-end rise" style={{ animationDelay: "800ms" }}>
+          <p className="text-[#f2e7dc]/70 text-base md:text-lg leading-relaxed max-w-xl">
+            A full-service law firm providing exceptional legal counsel with dedication and
+            professionalism — for individuals, families and businesses since 2020.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3">
             <Link
               href="/services"
-              className="group inline-flex items-center gap-3 bg-[#c9a84c] text-black px-8 py-4 text-sm uppercase tracking-widest font-bold hover:bg-[#dbbf6e] transition-all"
+              className="group inline-flex items-center justify-center gap-3 bg-[#a68365] text-white px-7 py-4 rounded-full text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[#8c6c50] transition-colors"
             >
               Our Services
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 border border-white/30 text-white px-8 py-4 text-sm uppercase tracking-widest font-light hover:border-[#c9a84c] hover:text-[#c9a84c] transition-all"
+              className="inline-flex items-center justify-center gap-3 border border-[#f2e7dc]/40 text-[#f2e7dc] px-7 py-4 rounded-full text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[#f2e7dc] hover:text-[#472e18] transition-colors"
             >
               Free Consultation
             </Link>
@@ -77,8 +62,12 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bottom gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+      <a
+        href="#stats"
+        className="relative self-start ml-6 md:ml-8 mb-8 inline-flex items-center gap-3 text-[#f2e7dc]/60 hover:text-[#f2e7dc] text-[0.6875rem] uppercase tracking-[0.25em] transition-colors"
+      >
+        <ArrowDown size={14} className="animate-bounce" /> Scroll down
+      </a>
     </section>
   );
 }

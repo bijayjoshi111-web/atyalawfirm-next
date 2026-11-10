@@ -1,9 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Phone, Mail, ArrowUpRight } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -14,6 +13,15 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+function Wordmark() {
+  return (
+    <Link href="/" className="flex flex-col leading-none text-[#f2e7dc]" aria-label="Atya Law Firm — home">
+      <span className="font-display text-[1.75rem] tracking-[0.04em]">Atya</span>
+      <span className="text-[0.625rem] tracking-[0.35em] uppercase text-[#a68365] mt-1">Law Firm</span>
+    </Link>
+  );
+}
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,6 +29,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
+    onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -29,104 +38,100 @@ export default function Navbar() {
     setMenuOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
+  const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
+
   return (
-    <>
-      {/* Top Bar */}
-      <div className="bg-[#0a0a0a] text-white text-sm py-2 px-4 hidden md:block">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-6">
-            <a href="tel:+9779808450958" className="flex items-center gap-2 hover:text-[#c9a84c] transition-colors">
-              <Phone size={13} /> +977 9808450958
+    <header
+      className={`sticky top-0 z-50 bg-[#472e18] border-b border-[#f2e7dc]/20 transition-shadow duration-300 ${
+        scrolled ? "shadow-[0_8px_30px_rgba(0,0,0,0.25)]" : ""
+      }`}
+    >
+      <div className="flex items-stretch justify-between h-20 md:h-24 pl-4 md:pl-8">
+        <div className="flex items-center mr-auto">
+          <Wordmark />
+        </div>
+
+        {/* Desktop links */}
+        <nav className="hidden lg:flex items-center gap-8 pr-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`relative text-xs uppercase tracking-[0.2em] font-medium py-2 transition-colors ${
+                isActive(link.href) ? "text-[#a68365]" : "text-[#f2e7dc]/80 hover:text-white"
+              }`}
+            >
+              {link.label}
+              <span
+                className={`absolute left-0 right-0 -bottom-0.5 h-px bg-[#a68365] origin-left transition-transform duration-300 ${
+                  isActive(link.href) ? "scale-x-100" : "scale-x-0"
+                }`}
+              />
+            </Link>
+          ))}
+        </nav>
+
+        <div className="hidden lg:flex items-center pl-8 pr-8 border-l border-[#f2e7dc]/20">
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 bg-[#a68365] text-white px-6 py-3 rounded-full text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[#8c6c50] transition-colors"
+          >
+            Consult <ArrowUpRight size={14} />
+          </Link>
+        </div>
+
+        {/* Menu button (mobile / tablet) */}
+        <button
+          className="lg:hidden flex items-center gap-4 px-6 md:px-8 border-l border-[#f2e7dc]/20 text-white"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+        >
+          <span className="text-xs uppercase tracking-[0.2em] font-medium">{menuOpen ? "Close" : "Menu"}</span>
+          <span className="relative w-6 h-3">
+            <span className={`absolute right-0 h-px bg-current transition-all duration-300 ${menuOpen ? "top-1.5 w-6 rotate-45" : "top-0 w-6"}`} />
+            <span className={`absolute right-0 h-px bg-current transition-all duration-300 ${menuOpen ? "top-1.5 w-6 -rotate-45" : "top-3 w-4"}`} />
+          </span>
+        </button>
+      </div>
+
+      {/* Full-screen menu overlay */}
+      <div
+        className={`lg:hidden fixed inset-x-0 top-20 md:top-24 bottom-0 bg-[#472e18] transition-[opacity,visibility] duration-500 ${
+          menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+      >
+        <div className="h-full overflow-y-auto px-6 md:px-8 py-10 flex flex-col">
+          <p className="eyebrow text-[#a68365] mb-6">Menu</p>
+          <nav className="flex flex-col">
+            {navLinks.map((link, i) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                style={{ transitionDelay: menuOpen ? `${80 + i * 50}ms` : "0ms" }}
+                className={`font-display text-4xl md:text-5xl py-3 border-b border-[#f2e7dc]/15 transition-all duration-500 ${
+                  menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                } ${isActive(link.href) ? "text-[#a68365]" : "text-[#f2e7dc] hover:text-[#a68365]"}`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="mt-auto pt-10 space-y-3 text-sm text-[#f2e7dc]/70">
+            <a href="tel:+9779808450958" className="flex items-center gap-3 hover:text-white">
+              <Phone size={14} className="text-[#a68365]" /> +977 9808450958
             </a>
-            <a href="mailto:info@atyalaw.com" className="flex items-center gap-2 hover:text-[#c9a84c] transition-colors">
-              <Mail size={13} /> info@atyalaw.com
+            <a href="mailto:info@atyalaw.com" className="flex items-center gap-3 hover:text-white">
+              <Mail size={14} className="text-[#a68365]" /> info@atyalaw.com
             </a>
-          </div>
-          <div className="text-[#c9a84c] tracking-widest text-xs uppercase font-light">
-            Serving with Dedication &amp; Professionalism
           </div>
         </div>
       </div>
-
-      {/* Main Nav */}
-      <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-white shadow-lg border-b border-[#e0e0e0]"
-            : "bg-white border-b border-[#e0e0e0]"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/">
-            <Image src="/logo.jpeg" alt="Atya Law Firm" width={120} height={48} className="h-12 w-auto object-contain" priority />
-          </Link>
-
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`px-4 py-2 text-sm tracking-wide uppercase font-light transition-colors relative group ${
-                  pathname === link.href
-                    ? "text-[#c9a84c]"
-                    : "text-[#1a1a1a] hover:text-[#c9a84c]"
-                }`}
-              >
-                {link.label}
-                <span
-                  className={`absolute bottom-0 left-4 right-4 h-[2px] bg-[#c9a84c] transition-transform origin-left ${
-                    pathname === link.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                  }`}
-                />
-              </Link>
-            ))}
-            <Link
-              href="/contact"
-              className="ml-4 px-5 py-2 bg-[#c9a84c] text-black text-sm uppercase tracking-widest font-bold hover:bg-[#a8892e] transition-colors"
-            >
-              Consult
-            </Link>
-          </nav>
-
-          {/* Mobile Toggle */}
-          <button
-            className="md:hidden p-2 text-[#0a0a0a]"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        <div
-          className={`md:hidden bg-[#0a0a0a] text-white overflow-hidden transition-all duration-300 ${
-            menuOpen ? "max-h-screen py-4" : "max-h-0"
-          }`}
-        >
-          <div className="flex flex-col px-4 gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`py-3 px-2 border-b border-white/10 text-sm uppercase tracking-widest ${
-                  pathname === link.href ? "text-[#c9a84c]" : "text-white hover:text-[#c9a84c]"
-                } transition-colors`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/contact"
-              className="mt-3 py-3 text-center bg-[#c9a84c] text-black text-sm uppercase tracking-widest font-bold"
-            >
-              Free Consultation
-            </Link>
-          </div>
-        </div>
-      </header>
-    </>
+    </header>
   );
 }

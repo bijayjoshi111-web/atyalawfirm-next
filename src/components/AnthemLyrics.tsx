@@ -50,15 +50,14 @@ const rightColumn = allLines.slice(mid);
 
 export default function AnthemLyrics() {
   return (
-    <section className="py-24 bg-[#0a0a0a] relative overflow-hidden">
-      <div className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-transparent via-[#c9a84c] to-transparent" />
+    <section className="py-24 bg-[#472e18] relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 md:px-12">
         <AnimateOnScroll>
           <div className="text-center mb-16">
-            <p className="text-[#c9a84c] text-xs uppercase tracking-[0.3em] mb-3">Our Identity</p>
-            <h2 className="font-display text-4xl md:text-5xl text-white">Firm Anthem</h2>
-            <div className="w-12 h-[2px] bg-[#c9a84c] mx-auto mt-5" />
+            <p className="text-[#a68365] text-xs uppercase tracking-[0.3em] mb-3">Our Identity</p>
+            <h2 className="font-display text-5xl md:text-7xl leading-[0.95] text-[#f2e7dc]">Firm Anthem</h2>
+            <div className="w-12 h-[2px] bg-[#a68365] mx-auto mt-5" />
           </div>
         </AnimateOnScroll>
 

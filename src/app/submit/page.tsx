@@ -50,9 +50,9 @@ export default function SubmitArticlePage() {
 
   if (status === "success") {
     return (
-      <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center px-4">
+      <div className="min-h-screen bg-[#472e18] flex items-center justify-center px-4">
         <div className="max-w-md w-full text-center">
-          <CheckCircle size={56} className="text-[#c9a84c] mx-auto mb-6" />
+          <CheckCircle size={56} className="text-[#a68365] mx-auto mb-6" />
           <h1 className="font-display text-3xl text-white mb-3">Submission Received</h1>
           <p className="text-white/50 mb-2 leading-relaxed">
             Thank you for your article. Our team will review it and publish it if approved.
@@ -60,7 +60,7 @@ export default function SubmitArticlePage() {
           <p className="text-white/30 text-sm mb-8">You will be notified at the email you provided.</p>
           <Link
             href="/insights"
-            className="inline-block px-6 py-3 border border-white/20 text-white text-sm uppercase tracking-widest hover:border-[#c9a84c] hover:text-[#c9a84c] transition-colors"
+            className="inline-block px-6 py-3 border border-white/20 text-white text-sm uppercase tracking-widest hover:border-[#a68365] hover:text-[#a68365] transition-colors"
           >
             Back to Insights
           </Link>
@@ -70,24 +70,24 @@ export default function SubmitArticlePage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f8f7f4]">
+    <div className="min-h-screen bg-[#f2e7dc]">
       {/* Header */}
-      <div className="bg-[#0a0a0a] py-5 px-4 border-b border-white/10">
+      <div className="bg-[#472e18] py-5 px-4 border-b border-white/10">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <Link
             href="/insights"
-            className="inline-flex items-center gap-2 text-white/50 text-xs uppercase tracking-widest hover:text-[#c9a84c] transition-colors"
+            className="inline-flex items-center gap-2 text-white/50 text-xs uppercase tracking-widest hover:text-[#a68365] transition-colors"
           >
             <ArrowLeft size={12} /> Insights
           </Link>
-          <p className="text-[#c9a84c] text-xs uppercase tracking-[0.25em] font-bold">Submit an Article</p>
+          <p className="text-[#a68365] text-xs uppercase tracking-[0.25em] font-bold">Submit an Article</p>
           <div className="w-20" />
         </div>
       </div>
 
       {/* Notice */}
-      <div className="bg-[#c9a84c]/10 border-b border-[#c9a84c]/20 py-3 px-4 text-center">
-        <p className="text-[#8a6e28] text-xs uppercase tracking-widest">
+      <div className="bg-[#a68365]/10 border-b border-[#a68365]/20 py-3 px-4 text-center">
+        <p className="text-[#7a5c42] text-xs uppercase tracking-widest">
           Articles are reviewed by our team before being published
         </p>
       </div>
@@ -106,7 +106,7 @@ export default function SubmitArticlePage() {
                   onChange={(e) => setSubmitterName(e.target.value)}
                   placeholder="Full name"
                   required
-                  className="w-full bg-white border border-[#e0e0e0] focus:border-[#c9a84c] outline-none px-4 py-3 text-[#0a0a0a] text-sm placeholder:text-[#ccc] transition-colors"
+                  className="w-full bg-white border border-[#e6dace] focus:border-[#a68365] outline-none px-4 py-3 text-[#1f1f1f] text-sm placeholder:text-[#ccc] transition-colors"
                 />
               </div>
               <div>
@@ -118,7 +118,7 @@ export default function SubmitArticlePage() {
                   value={submitterEmail}
                   onChange={(e) => setSubmitterEmail(e.target.value)}
                   placeholder="you@example.com"
-                  className="w-full bg-white border border-[#e0e0e0] focus:border-[#c9a84c] outline-none px-4 py-3 text-[#0a0a0a] text-sm placeholder:text-[#ccc] transition-colors"
+                  className="w-full bg-white border border-[#e6dace] focus:border-[#a68365] outline-none px-4 py-3 text-[#1f1f1f] text-sm placeholder:text-[#ccc] transition-colors"
                 />
               </div>
             </div>
@@ -132,7 +132,7 @@ export default function SubmitArticlePage() {
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Enter a compelling headline..."
                 required
-                className="w-full bg-white border border-[#e0e0e0] focus:border-[#c9a84c] outline-none px-4 py-3 text-[#0a0a0a] font-display text-2xl placeholder:text-[#ccc] transition-colors"
+                className="w-full bg-white border border-[#e6dace] focus:border-[#a68365] outline-none px-4 py-3 text-[#1f1f1f] font-display text-2xl placeholder:text-[#ccc] transition-colors"
               />
             </div>
 
@@ -148,7 +148,7 @@ export default function SubmitArticlePage() {
                 placeholder="A short summary that draws readers in..."
                 required
                 rows={3}
-                className="w-full bg-white border border-[#e0e0e0] focus:border-[#c9a84c] outline-none px-4 py-3 text-[#444] text-sm leading-relaxed placeholder:text-[#ccc] resize-none transition-colors"
+                className="w-full bg-white border border-[#e6dace] focus:border-[#a68365] outline-none px-4 py-3 text-[#444] text-sm leading-relaxed placeholder:text-[#ccc] resize-none transition-colors"
               />
             </div>
 
@@ -164,7 +164,7 @@ export default function SubmitArticlePage() {
                 placeholder={`Write your article here...\n\nLeave a blank line between paragraphs.`}
                 required
                 rows={20}
-                className="w-full bg-white border border-[#e0e0e0] focus:border-[#c9a84c] outline-none px-4 py-4 text-[#444] text-sm leading-relaxed placeholder:text-[#ccc] resize-y transition-colors font-mono"
+                className="w-full bg-white border border-[#e6dace] focus:border-[#a68365] outline-none px-4 py-4 text-[#444] text-sm leading-relaxed placeholder:text-[#ccc] resize-y transition-colors font-mono"
               />
             </div>
 
@@ -178,12 +178,12 @@ export default function SubmitArticlePage() {
 
           {/* Sidebar */}
           <div className="space-y-6">
-            <div className="bg-white border border-[#e0e0e0] p-6">
+            <div className="bg-white border border-[#e6dace] p-6">
               <p className="text-[10px] uppercase tracking-widest text-[#999] mb-4">Submit for Review</p>
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="w-full flex items-center justify-center gap-2 py-3 bg-[#c9a84c] text-black text-sm uppercase tracking-widest font-bold hover:bg-[#a8892e] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full flex items-center justify-center gap-2 py-3 bg-[#a68365] text-white text-xs uppercase tracking-[0.2em] font-semibold rounded-full hover:bg-[#8c6c50] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {status === "submitting" ? "Submitting..." : <><Send size={13} /> Submit Article</>}
               </button>
@@ -192,12 +192,12 @@ export default function SubmitArticlePage() {
               </p>
             </div>
 
-            <div className="bg-white border border-[#e0e0e0] p-6">
+            <div className="bg-white border border-[#e6dace] p-6">
               <label className="block text-[10px] uppercase tracking-widest text-[#999] mb-3">Category *</label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full bg-[#f8f7f4] border border-[#e0e0e0] focus:border-[#c9a84c] outline-none px-3 py-2 text-sm text-[#0a0a0a] transition-colors"
+                className="w-full bg-[#f2e7dc] border border-[#e6dace] focus:border-[#a68365] outline-none px-3 py-2 text-sm text-[#1f1f1f] transition-colors"
               >
                 {CATEGORIES.map((c) => (
                   <option key={c} value={c}>{c}</option>
@@ -205,8 +205,8 @@ export default function SubmitArticlePage() {
               </select>
             </div>
 
-            <div className="bg-white border border-[#e0e0e0] p-6">
-              <p className="text-[10px] uppercase tracking-widest text-[#c9a84c] font-bold mb-3">Guidelines</p>
+            <div className="bg-white border border-[#e6dace] p-6">
+              <p className="text-[10px] uppercase tracking-widest text-[#a68365] font-bold mb-3">Guidelines</p>
               <ul className="space-y-2 text-xs text-[#666] leading-relaxed">
                 <li>• Aim for 400–800 words</li>
                 <li>• Focus on legal insights relevant to Nepal</li>

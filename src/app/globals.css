@@ -1,47 +1,73 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: var(--font-playfair), serif;
-  --font-body: var(--font-lato), sans-serif;
+  --font-display: var(--font-erode), "Palatino Linotype", serif;
+  --font-body: var(--font-open-sans), sans-serif;
 }
 
+/* Palette modelled on vdb-arbitration.com */
 :root {
-  --black: #0a0a0a;
-  --black-soft: #1a1a1a;
-  --black-mid: #2a2a2a;
-  --gold: #c9a84c;
-  --gold-light: #dbbf6e;
-  --gold-dark: #a8892e;
+  --brown: #472e18;
+  --brown-deep: #3a2513;
+  --black: #1f1f1f;
+  --gold: #a68365;
+  --gold-light: #b8987c;
+  --gold-dark: #8c6c50;
+  --beige: #f2e7dc;
+  --grey: #a69b8d;
   --white: #ffffff;
-  --off-white: #f9f7f4;
-  --gray-light: #f0ede8;
-  --gray-mid: #d0cdc8;
-  --text-muted: #888;
+  --off-white: #f2e7dc;
+  --gray-light: #e8d9c9;
+  --gray-mid: #cfc2b3;
+  --text-muted: #7d7d88;
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: var(--font-lato), sans-serif;
-  color: var(--black-soft);
+  font-family: var(--font-open-sans), sans-serif;
+  color: var(--black);
   background: var(--white);
+  line-height: 1.5;
   overflow-x: hidden;
 }
 
+/* Headings: large, light serif, tight leading (Erode) */
 h1, h2, h3, h4 {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-erode), "Palatino Linotype", serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+h1, h2 { line-height: 1.05; }
+
+/* Small uppercase eyebrow label */
+.eyebrow {
+  font-family: var(--font-open-sans), sans-serif;
+  font-size: 0.8125rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 1.2;
 }
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-track { background: var(--beige); }
 ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
 ::selection { background: var(--gold); color: white; }
 
 /* Scroll animations */
-.anim-base { transition: opacity 0.7s ease, transform 0.7s ease; }
+.anim-base { transition: opacity 0.9s ease, transform 0.9s cubic-bezier(.2,.7,.2,1); }
 .anim-up { opacity: 0; transform: translateY(30px); }
 .anim-left { opacity: 0; transform: translateX(-30px); }
 .anim-right { opacity: 0; transform: translateX(30px); }
 .anim-fade { opacity: 0; }
 .anim-visible { opacity: 1 !important; transform: none !important; }
+
+/* Hero heading letter fade-in */
+@keyframes rise { from { opacity: 0; transform: translateY(0.4em); } to { opacity: 1; transform: none; } }
+.rise { opacity: 0; animation: rise 1s cubic-bezier(.2,.7,.2,1) forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rise { animation: none; opacity: 1; }
+  .anim-base { transition: none; }
+}

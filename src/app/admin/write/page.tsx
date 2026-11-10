@@ -66,10 +66,10 @@ function PasswordGate({ onSuccess }: { onSuccess: () => void }) {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#472e18] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <Lock size={36} className="text-[#c9a84c] mx-auto mb-4" />
+          <Lock size={36} className="text-[#a68365] mx-auto mb-4" />
           <h1 className="font-display text-2xl text-white mb-1">Admin Access</h1>
           <p className="text-white/40 text-sm">Enter your password to continue</p>
         </div>
@@ -82,7 +82,7 @@ function PasswordGate({ onSuccess }: { onSuccess: () => void }) {
             placeholder="Password"
             autoFocus
             required
-            className="w-full bg-white/5 border border-white/10 focus:border-[#c9a84c] outline-none px-4 py-3 text-white placeholder:text-white/20 transition-colors"
+            className="w-full bg-white/5 border border-white/10 focus:border-[#a68365] outline-none px-4 py-3 text-white placeholder:text-white/20 transition-colors"
           />
 
           {error && (
@@ -94,7 +94,7 @@ function PasswordGate({ onSuccess }: { onSuccess: () => void }) {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-[#c9a84c] text-black text-sm uppercase tracking-widest font-bold hover:bg-[#a8892e] transition-colors disabled:opacity-50"
+            className="w-full py-3 bg-[#a68365] text-white text-xs uppercase tracking-[0.2em] font-semibold rounded-full hover:bg-[#8c6c50] transition-colors disabled:opacity-50"
           >
             {loading ? "Checking…" : "Enter"}
           </button>
@@ -159,15 +159,15 @@ function ManageTab() {
   return (
     <div className="space-y-3">
       {posts.map((post) => (
-        <div key={post.slug} className="bg-white border border-[#e0e0e0] p-5 flex items-start justify-between gap-4">
+        <div key={post.slug} className="bg-white border border-[#e6dace] p-5 flex items-start justify-between gap-4">
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-3 mb-1">
-              <span className="text-[#c9a84c] text-[10px] uppercase tracking-[0.2em] font-bold bg-[#c9a84c]/10 px-2 py-0.5">
+              <span className="text-[#a68365] text-[10px] uppercase tracking-[0.2em] font-bold bg-[#a68365]/10 px-2 py-0.5">
                 {post.category}
               </span>
               <span className="text-[#999] text-xs">{post.date}</span>
             </div>
-            <h3 className="text-[#0a0a0a] font-display text-base leading-snug mb-1">{post.title}</h3>
+            <h3 className="text-[#1f1f1f] font-display text-base leading-snug mb-1">{post.title}</h3>
             <p className="text-[#999] text-xs truncate">{post.excerpt}</p>
           </div>
 
@@ -175,7 +175,7 @@ function ManageTab() {
             <Link
               href={`/insights/${post.slug}`}
               target="_blank"
-              className="inline-flex items-center gap-1.5 px-3 py-2 border border-[#e0e0e0] text-[#666] text-xs uppercase tracking-widest hover:border-[#c9a84c] transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-2 border border-[#e6dace] text-[#666] text-xs uppercase tracking-widest hover:border-[#a68365] transition-colors"
             >
               <Eye size={11} /> View
             </Link>
@@ -192,7 +192,7 @@ function ManageTab() {
                 </button>
                 <button
                   onClick={() => setConfirmSlug(null)}
-                  className="px-3 py-2 border border-[#e0e0e0] text-[#999] text-xs uppercase tracking-widest hover:border-[#999] transition-colors"
+                  className="px-3 py-2 border border-[#e6dace] text-[#999] text-xs uppercase tracking-widest hover:border-[#999] transition-colors"
                 >
                   Cancel
                 </button>
@@ -269,16 +269,16 @@ function ReviewTab() {
         });
 
         return (
-          <div key={post.id} className="bg-white border border-[#e0e0e0] overflow-hidden">
+          <div key={post.id} className="bg-white border border-[#e6dace] overflow-hidden">
             <div className="flex items-start justify-between gap-4 p-6">
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-3 mb-1">
-                  <span className="text-[#c9a84c] text-[10px] uppercase tracking-[0.2em] font-bold bg-[#c9a84c]/10 px-2 py-0.5">
+                  <span className="text-[#a68365] text-[10px] uppercase tracking-[0.2em] font-bold bg-[#a68365]/10 px-2 py-0.5">
                     {post.category}
                   </span>
                   <span className="text-[#999] text-xs">{submitted}</span>
                 </div>
-                <h3 className="text-[#0a0a0a] font-display text-lg leading-snug mb-1">{post.title}</h3>
+                <h3 className="text-[#1f1f1f] font-display text-lg leading-snug mb-1">{post.title}</h3>
                 <p className="text-[#999] text-xs">
                   By <span className="text-[#555]">{post.submitterName}</span>
                   {post.submitterEmail && <> · <span className="text-[#999]">{post.submitterEmail}</span></>}
@@ -287,7 +287,7 @@ function ReviewTab() {
               <div className="flex items-center gap-2 shrink-0">
                 <button
                   onClick={() => setExpanded(isExpanded ? null : post.id)}
-                  className="inline-flex items-center gap-1.5 px-3 py-2 border border-[#e0e0e0] text-[#666] text-xs uppercase tracking-widest hover:border-[#c9a84c] transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 border border-[#e6dace] text-[#666] text-xs uppercase tracking-widest hover:border-[#a68365] transition-colors"
                 >
                   <Eye size={11} /> {isExpanded ? "Hide" : "Preview"}
                 </button>
@@ -301,7 +301,7 @@ function ReviewTab() {
                 <button
                   onClick={() => act(post.id, "approve")}
                   disabled={isProcessing}
-                  className="inline-flex items-center gap-1.5 px-3 py-2 bg-[#c9a84c] text-black text-xs uppercase tracking-widest font-bold hover:bg-[#a8892e] transition-colors disabled:opacity-40"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 bg-[#a68365] text-white text-xs uppercase tracking-[0.2em] font-semibold rounded-full hover:bg-[#8c6c50] transition-colors disabled:opacity-40"
                 >
                   <Check size={11} /> {isProcessing ? "…" : "Approve"}
                 </button>
@@ -309,7 +309,7 @@ function ReviewTab() {
             </div>
 
             {isExpanded && (
-              <div className="border-t border-[#e0e0e0] bg-[#fafaf9] px-6 py-5">
+              <div className="border-t border-[#e6dace] bg-[#f2e7dc] px-6 py-5">
                 <p className="text-[10px] uppercase tracking-widest text-[#999] mb-2">Excerpt</p>
                 <p className="text-[#555] text-sm mb-5 italic">{post.excerpt}</p>
                 <p className="text-[10px] uppercase tracking-widest text-[#999] mb-2">Article Body</p>
@@ -366,19 +366,19 @@ function WriteTab() {
     return (
       <div className="flex items-center justify-center py-20">
         <div className="max-w-md w-full text-center">
-          <CheckCircle size={56} className="text-[#c9a84c] mx-auto mb-6" />
-          <h2 className="font-display text-3xl text-[#0a0a0a] mb-3">Article Published</h2>
+          <CheckCircle size={56} className="text-[#a68365] mx-auto mb-6" />
+          <h2 className="font-display text-3xl text-[#1f1f1f] mb-3">Article Published</h2>
           <p className="text-[#999] mb-8">Your article is now live on the Insights page.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href={`/insights/${publishedSlug}`}
-              className="px-6 py-3 bg-[#c9a84c] text-black text-sm uppercase tracking-widest font-bold hover:bg-[#a8892e] transition-colors"
+              className="px-6 py-3 bg-[#a68365] text-white text-xs uppercase tracking-[0.2em] font-semibold rounded-full hover:bg-[#8c6c50] transition-colors"
             >
               View Article
             </Link>
             <button
               onClick={() => { setTitle(""); setCategory(CATEGORIES[0]); setExcerpt(""); setContent(""); setStatus("idle"); }}
-              className="px-6 py-3 border border-[#e0e0e0] text-[#0a0a0a] text-sm uppercase tracking-widest hover:border-[#c9a84c] transition-colors"
+              className="px-6 py-3 border border-[#e6dace] text-[#1f1f1f] text-sm uppercase tracking-widest hover:border-[#a68365] transition-colors"
             >
               Write Another
             </button>
@@ -397,7 +397,7 @@ function WriteTab() {
             <input
               type="text" value={title} onChange={(e) => setTitle(e.target.value)}
               placeholder="Enter a compelling headline..." required
-              className="w-full bg-white border border-[#e0e0e0] focus:border-[#c9a84c] outline-none px-4 py-3 text-[#0a0a0a] font-display text-2xl placeholder:text-[#ccc] transition-colors"
+              className="w-full bg-white border border-[#e6dace] focus:border-[#a68365] outline-none px-4 py-3 text-[#1f1f1f] font-display text-2xl placeholder:text-[#ccc] transition-colors"
             />
           </div>
           <div>
@@ -407,7 +407,7 @@ function WriteTab() {
             <textarea
               value={excerpt} onChange={(e) => setExcerpt(e.target.value)}
               placeholder="A short summary that draws readers in..." required rows={3}
-              className="w-full bg-white border border-[#e0e0e0] focus:border-[#c9a84c] outline-none px-4 py-3 text-[#444] text-sm leading-relaxed placeholder:text-[#ccc] resize-none transition-colors"
+              className="w-full bg-white border border-[#e6dace] focus:border-[#a68365] outline-none px-4 py-3 text-[#444] text-sm leading-relaxed placeholder:text-[#ccc] resize-none transition-colors"
             />
           </div>
           <div>
@@ -416,12 +416,12 @@ function WriteTab() {
                 Article Body * <span className="text-[#ccc] normal-case tracking-normal">(blank line between paragraphs)</span>
               </label>
               <button type="button" onClick={() => setPreview(!preview)}
-                className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-[#c9a84c] hover:opacity-70 transition-opacity">
+                className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-[#a68365] hover:opacity-70 transition-opacity">
                 <Eye size={11} /> {preview ? "Edit" : "Preview"}
               </button>
             </div>
             {preview ? (
-              <div className="bg-white border border-[#e0e0e0] px-6 py-6 min-h-[400px] space-y-4">
+              <div className="bg-white border border-[#e6dace] px-6 py-6 min-h-[400px] space-y-4">
                 {content.split("\n\n").filter(Boolean).map((para, i) => (
                   <p key={i} className="text-[#444] leading-relaxed text-[1.05rem]">{para}</p>
                 ))}
@@ -432,7 +432,7 @@ function WriteTab() {
                 value={content} onChange={(e) => setContent(e.target.value)}
                 placeholder={"Write your article here...\n\nLeave a blank line between paragraphs."}
                 required rows={20}
-                className="w-full bg-white border border-[#e0e0e0] focus:border-[#c9a84c] outline-none px-4 py-4 text-[#444] text-sm leading-relaxed placeholder:text-[#ccc] resize-y transition-colors font-mono"
+                className="w-full bg-white border border-[#e6dace] focus:border-[#a68365] outline-none px-4 py-4 text-[#444] text-sm leading-relaxed placeholder:text-[#ccc] resize-y transition-colors font-mono"
               />
             )}
           </div>
@@ -444,20 +444,20 @@ function WriteTab() {
         </div>
 
         <div className="space-y-6">
-          <div className="bg-white border border-[#e0e0e0] p-6">
+          <div className="bg-white border border-[#e6dace] p-6">
             <p className="text-[10px] uppercase tracking-widest text-[#999] mb-1">Publish</p>
             <p className="text-[10px] text-[#ccc] mb-4">{wordCount} words · {readTime} min read</p>
             <button
               type="submit" disabled={status === "submitting"}
-              className="w-full flex items-center justify-center gap-2 py-3 bg-[#c9a84c] text-black text-sm uppercase tracking-widest font-bold hover:bg-[#a8892e] transition-colors disabled:opacity-50"
+              className="w-full flex items-center justify-center gap-2 py-3 bg-[#a68365] text-white text-xs uppercase tracking-[0.2em] font-semibold rounded-full hover:bg-[#8c6c50] transition-colors disabled:opacity-50"
             >
               {status === "submitting" ? "Publishing..." : <><Send size={13} /> Publish Article</>}
             </button>
           </div>
-          <div className="bg-white border border-[#e0e0e0] p-6">
+          <div className="bg-white border border-[#e6dace] p-6">
             <label className="block text-[10px] uppercase tracking-widest text-[#999] mb-3">Category *</label>
             <select value={category} onChange={(e) => setCategory(e.target.value)}
-              className="w-full bg-[#f8f7f4] border border-[#e0e0e0] focus:border-[#c9a84c] outline-none px-3 py-2 text-sm text-[#0a0a0a] transition-colors">
+              className="w-full bg-[#f2e7dc] border border-[#e6dace] focus:border-[#a68365] outline-none px-3 py-2 text-sm text-[#1f1f1f] transition-colors">
               {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
             </select>
           </div>
@@ -493,20 +493,20 @@ export default function AdminPage() {
   function tabClass(t: Tab) {
     return `px-5 py-4 text-xs uppercase tracking-widest border-b-2 transition-colors flex items-center gap-2 ${
       tab === t
-        ? "border-[#c9a84c] text-[#0a0a0a] font-bold"
-        : "border-transparent text-[#999] hover:text-[#0a0a0a]"
+        ? "border-[#a68365] text-[#1f1f1f] font-bold"
+        : "border-transparent text-[#999] hover:text-[#1f1f1f]"
     }`;
   }
 
   return (
-    <div className="min-h-screen bg-[#f8f7f4]">
-      <div className="bg-[#0a0a0a] py-5 px-4 border-b border-white/10">
+    <div className="min-h-screen bg-[#f2e7dc]">
+      <div className="bg-[#472e18] py-5 px-4 border-b border-white/10">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <Link href="/insights"
-            className="inline-flex items-center gap-2 text-white/50 text-xs uppercase tracking-widest hover:text-[#c9a84c] transition-colors">
+            className="inline-flex items-center gap-2 text-white/50 text-xs uppercase tracking-widest hover:text-[#a68365] transition-colors">
             <ArrowLeft size={12} /> Insights
           </Link>
-          <p className="text-[#c9a84c] text-xs uppercase tracking-[0.25em] font-bold">Admin</p>
+          <p className="text-[#a68365] text-xs uppercase tracking-[0.25em] font-bold">Admin</p>
           <button
             onClick={() => { sessionStorage.removeItem("admin_authed"); setAuthed(false); }}
             className="text-white/30 text-xs uppercase tracking-widest hover:text-white/60 transition-colors"
@@ -516,7 +516,7 @@ export default function AdminPage() {
         </div>
       </div>
 
-      <div className="bg-white border-b border-[#e0e0e0] px-4">
+      <div className="bg-white border-b border-[#e6dace] px-4">
         <div className="max-w-5xl mx-auto flex">
           <button onClick={() => setTab("write")} className={tabClass("write")}>
             Write Article
@@ -524,7 +524,7 @@ export default function AdminPage() {
           <button onClick={() => setTab("review")} className={tabClass("review")}>
             Review Submissions
             {pendingCount !== null && pendingCount > 0 && (
-              <span className="bg-[#c9a84c] text-black text-[10px] font-bold px-1.5 py-0.5 min-w-[18px] text-center">
+              <span className="bg-[#a68365] text-white text-[10px] font-bold px-1.5 py-0.5 min-w-[18px] text-center">
                 {pendingCount}
               </span>
             )}

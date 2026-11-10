@@ -26,7 +26,7 @@ const features = [
 
 export default function WhyUs() {
   return (
-    <section className="py-24 bg-[#0a0a0a] relative overflow-hidden">
+    <section className="py-24 bg-[#472e18] relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         {[...Array(6)].map((_, i) => (
@@ -47,20 +47,20 @@ export default function WhyUs() {
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <AnimateOnScroll>
           <div className="text-center mb-16">
-            <p className="text-[#c9a84c] text-xs uppercase tracking-[0.3em] mb-3">Why Choose Us</p>
-            <h2 className="font-display text-4xl md:text-5xl text-white">
+            <p className="text-[#a68365] text-xs uppercase tracking-[0.3em] mb-3">Why Choose Us</p>
+            <h2 className="font-display text-5xl md:text-7xl leading-[0.95] text-[#f2e7dc]">
               The Atya Difference
             </h2>
-            <div className="w-12 h-[2px] bg-[#c9a84c] mx-auto mt-5" />
+            <div className="w-12 h-[2px] bg-[#a68365] mx-auto mt-5" />
           </div>
         </AnimateOnScroll>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
           {features.map((f, i) => (
             <AnimateOnScroll key={f.title} delay={i * 100} direction="up">
-              <div className="group bg-[#0a0a0a] p-10 hover:bg-[#1a1a1a] transition-colors text-center">
-                <div className="w-16 h-16 border border-[#c9a84c]/30 flex items-center justify-center mx-auto mb-6 group-hover:bg-[#c9a84c]/10 transition-colors">
-                  <f.icon size={24} className="text-[#c9a84c]" />
+              <div className="group bg-[#472e18] p-10 hover:bg-[#3a2513] transition-colors text-center">
+                <div className="w-16 h-16 border border-[#a68365]/30 flex items-center justify-center mx-auto mb-6 group-hover:bg-[#a68365]/10 transition-colors">
+                  <f.icon size={24} className="text-[#a68365]" />
                 </div>
                 <h3 className="font-display text-xl text-white mb-3">{f.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{f.desc}</p>
